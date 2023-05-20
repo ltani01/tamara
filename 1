@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+
+    body {
+
+      position: relative;
+
+      height: 100vh;
+
+      margin: 0;
+
+      padding: 0;
+
+      background-image: linear-gradient(to right, violet, purple);
+
+    }
+
+    
+
+    .button {
+
+      position: absolute;
+
+      top: 50%;
+
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      background-color: red;
+
+      color: white;
+
+      font-size: 24px;
+
+      padding: 10px 0;
+
+      border: none;
+
+      border-radius: 5px;
+
+      width: 80%;
+
+      max-width: 400px;
+
+      white-space: nowrap;
+
+      overflow: hidden;
+
+      text-overflow: ellipsis;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <button class="button" onclick="copyLink()">Click here to Copy the Link</button>
+
+  <script>
+
+    function copyLink() {
+
+      var link = "https://www.example.com"; // Replace with your desired link
+
+      var tempInput = document.createElement("input");
+
+      tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+
+      tempInput.value = link;
+
+      document.body.appendChild(tempInput);
+
+      tempInput.select();
+
+      document.execCommand("copy");
+
+      document.body.removeChild(tempInput);
+
+      alert("Link copied: " + link);
+
+    }
+
+  </script>
+
+</body>
+
+</html>
